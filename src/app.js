@@ -22,7 +22,7 @@ async function getMediumStats() {
 
     takenData = await Promise.all(
       mediumRes.data.items
-        .slice(1, 4) // 3 stories
+        .slice(0, 3) // 3 stories
         .map(async (item) => {
           const res = await axios.get(item.guid); // story url
           const $ = cheerio.load(res.data);
@@ -54,8 +54,14 @@ async function getMediumStats() {
     ]);
   });
 
+  const nowTime = new Date();
   result = table(
-    [[`Medium @${MEDIUM_USER_NAME}`], ['Latest Stories:'], ...result],
+    [
+      [`Medium @${MEDIUM_USER_NAME}`],
+      [`update time:${nowTime}`],
+      ['Latest Stories:'],
+      ...result,
+    ],
     {
       align: ['l', 'r'],
       stringLength: () => 20,

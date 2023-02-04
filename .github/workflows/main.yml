@@ -4,7 +4,7 @@ on:
     branches:
       - main
   schedule:
-    - cron: "5 * * * *" # update every 5mins
+    - cron: '5 * * * *' # update every 5mins
 jobs:
   update:
     runs-on: ubuntu-latest
@@ -22,4 +22,3 @@ jobs:
           GH_PAT: ${{ secrets.GH_PAT }}
           MEDIUM_USER_NAME: ${{ secrets.MEDIUM_USER_NAME }}
           GIST_ID: ${{ secrets.GIST_ID }}
-        
