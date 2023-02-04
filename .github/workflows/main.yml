@@ -4,7 +4,7 @@ on:
     branches:
       - main
   schedule:
-    - cron: '*/1 * * * *' # update every 5mins
+    - cron: '*/6 * * * *' # update every 5mins
 jobs:
   update:
     runs-on: ubuntu-latest
