@@ -1,7 +1,7 @@
-name: Update Medium stats to Gist
+name: Scheduled Update Medium stats to Gist
 on:
   schedule:
-    - cron: "5 * * * *" # update every 5mins
+    - cron: "*/1 * * * *" # update every 5mins
 jobs:
   update:
     runs-on: ubuntu-latest
