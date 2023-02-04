@@ -1,8 +1,7 @@
 name: Update Medium stats to Gist
 on:
   push: 
-    branches:
-      - main
+    branches: [ "main" ]
   schedule:
     - cron: "5 * * * *" # update every 5 mins
 jobs:
