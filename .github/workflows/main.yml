@@ -12,9 +12,14 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
       - name: Update Medium stats to Gist
-        uses: RonnyChiang/medium_stat_box@main
+        uses: actions/setup-node@v2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GH_PAT: ${{ secrets.GH_PAT }}
           MEDIUM_USER_NAME: ${{ secrets.MEDIUM_USER_NAME }}
           GIST_ID: ${{ secrets.GIST_ID }}
+        with:
+          node-version: 16.13.1
+      - run: npm install
+      - run: npm run start
+        
