@@ -11,7 +11,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Update Medium stats to Gist
-        uses: RonnyChiang/medium_stat_box@main
+        uses: RonnyChiang/medium_stat_box
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GH_PAT: ${{ secrets.GH_PAT }}
