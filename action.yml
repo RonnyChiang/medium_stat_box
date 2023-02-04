@@ -1,4 +1,0 @@
-name: medium_stat_box
-runs: 
-  using: "node12"
-  main: "src/app.js"
