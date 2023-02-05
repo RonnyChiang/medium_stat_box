@@ -54,11 +54,16 @@ async function getMediumStats() {
     ]);
   });
 
-  const nowTime = new Date();
+  const nowTime = new Date(); // local time
+  // calculate utc+0 time diff
+  const utcTimeOffset = nowTime.getTimezoneOffset() / 60;
+  //calculate taipei time
+  let taipeiTime = nowTime.setHours(nowTime.getHours() + (utcTimeOffset + 8));
+
   result = table(
     [
       [`Medium @${MEDIUM_USER_NAME}`],
-      [`update time:${nowTime}`],
+      [`update time:${new Date(taipeiTime)}`],
       ['Latest Stories:'],
       ...result,
     ],

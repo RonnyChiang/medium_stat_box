@@ -3,8 +3,6 @@ on:
   push:
     branches:
       - main
-  schedule:
-    - cron: '*/6 * * * *' # update every 5mins
 jobs:
   update:
     runs-on: ubuntu-latest
