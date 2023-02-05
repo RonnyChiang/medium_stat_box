@@ -63,7 +63,7 @@ async function getMediumStats() {
   result = table(
     [
       [`Medium @${MEDIUM_USER_NAME}`],
-      [`update time:${new Date(taipeiTime)}`],
+      [`cronJob updateAt :${new Date(taipeiTime)}`],
       ['Latest Stories:'],
       ...result,
     ],
