@@ -21,6 +21,7 @@
     "eslint-plugin-prettier": "^4.2.1",
     "express": "^4.18.2",
     "gist-box": "^0.3.1",
+    "moment": "^2.29.4",
     "nodemon": "^2.0.20",
     "prettier": "^2.8.3",
     "text-table": "^0.2.0"

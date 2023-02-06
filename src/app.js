@@ -2,6 +2,7 @@ const axios = require('axios');
 const { GistBox } = require('gist-box');
 const cheerio = require('cheerio');
 const table = require('text-table');
+const moment = require('moment');
 
 require('dotenv').config();
 
@@ -58,12 +59,14 @@ async function getMediumStats() {
   // calculate utc+0 time diff
   const utcTimeOffset = nowTime.getTimezoneOffset() / 60;
   //calculate taipei time
-  let taipeiTime = nowTime.setHours(nowTime.getHours() + (utcTimeOffset + 8));
+  const taipeiTime = nowTime.setHours(nowTime.getHours() + (utcTimeOffset + 8));
+  // use moment to format time
+  const showedTime = moment(taipeiTime).format('YYYY-MM-DD HH:mm:ss');
 
   result = table(
     [
       [`Medium @${MEDIUM_USER_NAME}`],
-      [`cronJob updateAt :${new Date(taipeiTime)}`],
+      [`cronJob updateAt :${showedTime} GMT+8`],
       ['Latest Stories:'],
       ...result,
     ],
